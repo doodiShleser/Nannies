@@ -1,0 +1,22 @@
+﻿<Window x:Class="PLWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        mc:Ignorable="d"
+        Title="WelcomeWindow" Height="500" Width="550" FontSize="20" >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Name="WellcomeLabel" Margin="10,40,10,40" Content=" wellcome to the new website " FontSize="40" />
+        <StackPanel Grid.Row="1">
+            <Label Content="enter your id:" Margin="190,80,190,10" />
+            <PasswordBox x:Name="idBox" Width="180"  />
+        </StackPanel>
+        <Button Grid.Row="2" x:Name="enter" Content="Continue" Margin="150,20,150,20" Click="enter_Click" />
+    </Grid>
+</Window>

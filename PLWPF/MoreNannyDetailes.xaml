@@ -1,0 +1,70 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PLWPF"
+        xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLWPF.MoreNannyDetailes"
+        mc:Ignorable="d"
+        Title="MoreNannyDetailes" Height="400" Width="650" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0" x:Name="More">
+            <Label x:Name="Name" Margin=" 0,0,0,20" FontSize="22" FontWeight="Bold" Foreground="Blue" />
+            <Grid x:Name="grid1" 
+                  HorizontalAlignment="Left" Margin="0,10,0,10" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="elevator:" Grid.Column="0" HorizontalAlignment="Left" Margin="0,3,0,3" Grid.Row="0" VerticalAlignment="Center"/>
+                <CheckBox x:Name="elevatorCheckBox" Content="" Grid.Column="1" HorizontalAlignment="Left" IsEnabled="False" IsChecked="{Binding elevator, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="grid2"  
+                  HorizontalAlignment="Left" Margin="0,10,0,10" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Days Off according Ha-TAMAT:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+                <CheckBox x:Name="daysOffCheckBox" Content="" IsEnabled="False" Grid.Column="1" HorizontalAlignment="Left" IsChecked="{Binding DaysOff, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            </Grid>
+            <Grid x:Name="grid3" HorizontalAlignment="Left" Margin="0,10,0,10" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="is Able Paying Per Hours:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+                <CheckBox x:Name="perHourCheckBox" Content="" Grid.Column="1" 
+                          HorizontalAlignment="Left" IsEnabled="False"
+                          IsChecked="{Binding PerHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" 
+                          Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Column="1"  Name="Wh"  >
+            <Label x:Name="WeeklyHours" Content="Weekly Hours" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"  Margin="0,5,0,5"/>
+            <ListView x:Name="Days">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Day" Width="100" DisplayMemberBinding="{Binding day}" />
+                    <GridViewColumn Header="Work" Width="100" DisplayMemberBinding="{Binding work}" />
+                    <GridViewColumn Header="Begin" Width="100" DisplayMemberBinding="{Binding begin}"/>
+                    <GridViewColumn Header="End" Width="100" DisplayMemberBinding="{Binding end}"/>
+                </GridView>
+            </ListView.View>
+            </ListView>
+        </StackPanel>
+    </Grid>
+</Window>
